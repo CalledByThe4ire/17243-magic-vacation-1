@@ -1,381 +1,208 @@
-import {Easing, Animation, Scene2D} from "../utils";
+import {gsap} from "gsap";
+import {MotionPathPlugin} from "gsap/MotionPathPlugin";
 
-const IMAGES_URLS = Object.freeze({
-  key: `img/module-4/lose-images/key.png`,
-  snowflake: `img/module-4/lose-images/snowflake.png`,
-  leaf: `img/module-4/lose-images/leaf.png`,
-  saturn: `img/module-4/lose-images/saturn.png`,
-  watermelon: `img/module-4/lose-images/watermelon.png`,
-  flamingo: `img/module-4/lose-images/flamingo.png`,
-  crocodile: `img/module-4/lose-images/crocodile.png`,
-  drop: `img/module-4/lose-images/drop.png`,
-});
+gsap.registerPlugin(MotionPathPlugin);
 
-const OBJECTS = Object.freeze({
-  key: {
-    imageId: `key`,
-    x: 50,
-    y: 50,
-    size: 12,
-    opacity: 0,
-    transforms: {},
-  },
-  snowflake: {
-    imageId: `snowflake`,
-    x: 50,
-    y: 50,
-    size: 8.5,
-    opacity: 0,
-    transforms: {},
-  },
-  leaf: {
-    imageId: `leaf`,
-    x: 50,
-    y: 50,
-    size: 12,
-    opacity: 0,
-    transforms: {},
-  },
-  saturn: {
-    imageId: `saturn`,
-    x: 50,
-    y: 50,
-    size: 10,
-    opacity: 0,
-    transforms: {},
-  },
-  watermelon: {
-    imageId: `watermelon`,
-    x: 50,
-    y: 50,
-    size: 10,
-    opacity: 0,
-    transforms: {},
-  },
-  flamingo: {
-    imageId: `flamingo`,
-    x: 50,
-    y: 50,
-    size: 12,
-    opacity: 0,
-    transforms: {},
-  },
-  crocodile: {
-    imageId: `crocodile`,
-    x: 50,
-    y: 50,
-    size: 55,
-    opacity: 0,
-    transforms: {
-      translateX: 15,
-      translateY: 3.8,
-    },
-  },
-  drop: {
-    imageId: `drop`,
-    x: 47.8,
-    y: 56,
-    size: 2.8,
-    opacity: 0,
-    transforms: {},
-  },
-});
+export default () => {
+  const scene = document.querySelector(`.scene.scene--crocodile`);
 
-const LOCALS = Object.freeze({
-  mask: {
-    startingPoint: [56.6, 64.2],
-    segments: [
-      [52, 40],
-      [24, 38],
-      [26, 65],
-    ],
-  },
-});
+  const handleResize = () => {
+    const size = Math.min(window.innerWidth, window.innerHeight);
 
-export default class Scene2DCrocodile extends Scene2D {
-  constructor() {
-    const canvas = document.getElementById(`crocodile-scene`);
+    scene.style.width = `${size}px`;
+    scene.style.height = `${size}px`;
+  };
 
-    super({
-      canvas,
-      objects: OBJECTS,
-      locals: LOCALS,
-      imagesUrls: IMAGES_URLS,
+  window.addEventListener(`resize`, handleResize);
+
+  handleResize();
+
+  const images = Array.from(
+      document.querySelectorAll(`.scene.scene--crocodile .scene__image`)
+  );
+
+  const keyHole = images.filter((image) =>
+    image.classList.contains(`scene__image--key`)
+  );
+
+  const crocodile = images.filter((image) =>
+    image.classList.contains(`scene__image--crocodile`)
+  );
+
+  const drop = images.filter((image) =>
+    image.classList.contains(`scene__image--drop`)
+  );
+
+  const flamingo = images.filter((image) =>
+    image.classList.contains(`scene__image--flamingo`)
+  );
+
+  const leaf = images.filter((image) =>
+    image.classList.contains(`scene__image--leaf`)
+  );
+
+  const saturn = images.filter((image) =>
+    image.classList.contains(`scene__image--saturn`)
+  );
+
+  const snowflake = images.filter((image) =>
+    image.classList.contains(`scene__image--snowflake`)
+  );
+
+  const watermelon = images.filter((image) =>
+    image.classList.contains(`scene__image--watermelon`)
+  );
+
+  const keyHoleAnimation = () => {
+    const timeline = gsap.timeline({
+      defaults: {scale: 1, autoAlpha: 1, duration: 0.35},
     });
 
-    this.initLocals();
+    timeline.to(keyHole, {});
 
-    this.drawMask = () => {
-      const s = this.size;
+    return timeline;
+  };
 
-      const {
-        mask: {startingPoint, segments},
-      } = this.locals;
-      const [startingPointX, startingPointY] = startingPoint;
-
-      this.ctx.save();
-      this.ctx.beginPath();
-      this.ctx.moveTo((startingPointX * s) / 100, (startingPointY * s) / 100);
-      segments.forEach((segment) => {
-        const [segmentX, segmentY] = segment;
-        this.ctx.lineTo((segmentX * s) / 100, (segmentY * s) / 100);
-      });
-      this.ctx.closePath();
-      this.ctx.clip();
-    };
-
-    this.afterInit = () => {
-      this.objects.crocodile.before = this.drawMask;
-      this.objects.crocodile.after = () => this.ctx.restore();
-    };
-
-    this.initEventListeners();
-    this.initObjects(OBJECTS);
-    this.start();
-    this.updateSize();
-  }
-
-  initLocals() {
-    const {startingPoint, segments} = LOCALS.mask;
-
-    this.locals = {
-      mask: {
-        startingPoint,
-        segments,
+  const satellitesAnimation = () => {
+    const State = {
+      FROM: {
+        duration: 1,
+        ease: `expo.out`,
+      },
+      TO: {
+        scale: 1,
+        autoAlpha: 1,
       },
     };
-  }
 
-  initEventListeners() {
-    window.addEventListener(`resize`, this.updateSize.bind(this));
-  }
+    const getMotionPathSettings = (
+        id,
+        options = {start: 0, end: 1, autoRotate: true}
+    ) => ({
+      motionPath: {
+        path: `#${id}-path`,
+        align: `#${id}-path`,
+        start: options.start,
+        end: options.end,
+        autoRotate: options.autoRotate,
+        alignOrigin: [0.5, 0.5],
+      },
+    });
 
-  initAnimations() {
-    this.animations.push(
-        new Animation({
-          func: () => {
-            this.drawScene();
-          },
-          duration: `infinite`,
-          fps: 60,
-        })
-    );
+    const timeline = gsap.timeline({
+      defaults: State.FROM,
+    });
 
-    this.initKeyAnimations();
-    this.initSnowflakeAnimations();
-    this.initLeafAnimations();
-    this.initSaturnAnimations();
-    this.initWatermelonAnimations();
-    this.initFlamingoAnimations();
-    this.initCrocodileAnimations();
-    this.initDropAnimations();
-  }
+    timeline
+      .to(
+          flamingo,
+          {
+            ...State.TO,
+            ...getMotionPathSettings(`flamingo`, {autoRotate: false}),
+          },
+          `<`
+      )
+      .to(
+          snowflake,
+          {...State.TO, ...getMotionPathSettings(`snowflake`)},
+          `<`
+      )
+      .to(
+          saturn,
+          {
+            ...State.TO,
+            rotate: 5,
+            ...getMotionPathSettings(`saturn`, {autoRotate: false}),
+          },
+          `<`
+      )
+      .to(
+          leaf,
+          {
+            ...State.TO,
+            rotate: 5,
+            ...getMotionPathSettings(`leaf`, {autoRotate: false}),
+          },
+          `<`
+      )
+      .to(
+          watermelon,
+          {...State.TO, ...getMotionPathSettings(`watermelon`)},
+          `<`
+      )
+      .to(
+          [flamingo, snowflake, saturn, leaf, watermelon],
+          {yPercent: 200, ease: `power4.in`, duration: 1},
+          `<0.35`
+      )
+      .fromTo(crocodile, {}, {...State.TO});
 
-  initKeyAnimations() {
-    this.animations.push(
-        new Animation({
-          func: (progress) => {
-            this.objects.key.opacity = progress;
-            this.objects.key.transforms.scaleX = progress;
-            this.objects.key.transforms.scaleY = progress;
-          },
-          duration: 350,
-          easing: Easing.EASE_OUT_CUBIC,
-        })
-    );
-  }
+    return timeline;
+  };
 
-  initSnowflakeAnimations() {
-    this.animations.push(
-        new Animation({
-          func: (progress) => {
-            this.objects.snowflake.opacity = progress;
-            this.objects.snowflake.transforms.translateX = 14 * progress;
-            this.objects.snowflake.transforms.translateY = 1 * progress;
-            this.objects.snowflake.transforms.rotate =
-            Math.sin(Math.PI * progress) + -25 * progress;
-          },
-          duration: 1000,
-          easing: Easing.EASE_OUT_CUBIC,
-        })
-    );
-    this.animations.push(
-        new Animation({
-          func: (progress) => {
-            this.objects.snowflake.transforms.translateY = progress * 100;
-            this.objects.snowflake.transforms.rotate =
-            Math.sin(Math.PI * progress) + 25 * progress;
-          },
-          duration: 1500,
-          delay: 750,
-          easing: Easing.EASE_OUT_QUAD,
-        })
-    );
-  }
+  const crocodileAnimation = () => {
+    const timeline = gsap.timeline();
 
-  initLeafAnimations() {
-    this.animations.push(
-        new Animation({
-          func: (progress) => {
-            this.objects.leaf.opacity = progress;
-            this.objects.leaf.transforms.translateX = 25 * progress;
-            this.objects.leaf.transforms.translateY = -10 * progress;
-            this.objects.leaf.transforms.rotate =
-            5 + Math.sin(Math.PI * progress) - 15 * progress;
-          },
-          duration: 1000,
-          easing: Easing.EASE_OUT_CUBIC,
-        })
-    );
-    this.animations.push(
-        new Animation({
-          func: (progress) => {
-            this.objects.leaf.transforms.translateY = progress * 100;
+    timeline
+      .to(crocodile, {scale: 1, autoAlpha: 1, duration: 0})
+      .fromTo(
+          crocodile,
+          {xPercent: 90},
+          {xPercent: 25, duration: 0.5, ease: `power1.inOut`}
+      );
 
-            this.objects.leaf.transforms.rotate =
-            Math.sin(Math.PI * progress) + 15 * progress;
-          },
-          duration: 1250,
-          delay: 750,
-          easing: Easing.EASE_OUT_QUAD,
-        })
-    );
-  }
+    return timeline;
+  };
 
-  initSaturnAnimations() {
-    this.animations.push(
-        new Animation({
-          func: (progress) => {
-            this.objects.saturn.opacity = progress;
-            this.objects.saturn.transforms.translateX = Math.sin(progress) * 35;
-            this.objects.saturn.transforms.translateY = Math.sin(progress) * 25;
-            this.objects.saturn.transforms.rotate =
-            -45 + Math.sin(progress) + 45 * progress;
-          },
-          duration: 1000,
-          easing: Easing.EASE_OUT_CUBIC,
-        })
-    );
-    this.animations.push(
-        new Animation({
-          func: (progress) => {
-            this.objects.saturn.transforms.translateY =
-            20 + Math.sin(progress) * 100;
-          },
-          duration: 2000,
-          delay: 750,
-          easing: Easing.EASE_OUT_QUAD,
-        })
-    );
-  }
+  const dropAnimation = () => {
+    const timeline = gsap.timeline({
+      repeat: -1,
+    });
 
-  initWatermelonAnimations() {
-    this.animations.push(
-        new Animation({
-          func: (progress) => {
-            this.objects.watermelon.opacity = progress;
-            this.objects.watermelon.transforms.translateX =
-            Math.sin(progress) * -36;
-            this.objects.watermelon.transforms.translateY =
-            Math.sin(progress) * 9;
-            this.objects.watermelon.transforms.rotate =
-            -45 + Math.sin(progress) + 45 * progress;
-          },
-          duration: 1000,
-          easing: Easing.EASE_OUT_CUBIC,
-        })
-    );
-    this.animations.push(
-        new Animation({
-          func: (progress) => {
-            this.objects.watermelon.transforms.translateY =
-            20 + Math.sin(progress) * 100;
-          },
-          duration: 2000,
-          delay: 750,
-          easing: Easing.EASE_OUT_QUAD,
-        })
-    );
-  }
+    timeline.timeScale(1.25);
 
-  initFlamingoAnimations() {
-    this.animations.push(
-        new Animation({
-          func: (progress) => {
-            this.objects.flamingo.opacity = progress;
-            this.objects.flamingo.transforms.translateX =
-            Math.sin(progress) * -18;
-            this.objects.flamingo.transforms.translateY = Math.sin(progress) * -6;
-            this.objects.flamingo.transforms.rotate =
-            45 + Math.sin(progress) - 35 * progress;
+    timeline
+      .fromTo(
+          drop,
+          {
+            xPercent: 25,
+            yPercent: -35,
           },
-          duration: 1000,
-          easing: Easing.EASE_OUT_CUBIC,
-        })
-    );
-    this.animations.push(
-        new Animation({
-          func: (progress) => {
-            this.objects.flamingo.transforms.translateY =
-            20 + Math.sin(progress) * 100;
-          },
-          duration: 2000,
-          delay: 750,
-          easing: Easing.EASE_OUT_QUAD,
-        })
-    );
-  }
+          {
+            transformOrigin: `top center`,
+            xPercent: 25,
+            yPercent: -55,
+            autoAlpha: 1,
+            scale: 0.5,
+            duration: 0.5,
+          }
+      )
+      .to(drop, {scale: 1, yPercent: -45, duration: 0.5})
+      .to(drop, {yPercent: 45, duration: 0.75}, `<0.5`)
+      .to(
+          drop,
+          {scale: 0, autoAlpha: 0, yPercent: 75, duration: 1},
+          `-=0.35`
+      );
 
-  initCrocodileAnimations() {
-    this.animations.push(
-        new Animation({
-          func: (progress) => {
-            this.objects.crocodile.opacity = progress * 3;
-            this.objects.crocodile.transforms.translateX = progress * -1;
-          },
-          duration: 1000,
-          delay: 750,
-          easing: Easing.EASE_OUT_EXPO,
-        })
-    );
-  }
+    return timeline;
+  };
 
-  initDropAnimations() {
-    this.animations.push(
-        new Animation({
-          func: (progress, details) => {
-            const timePassed = (details.currentTime - details.startTime) / 1000;
-            const FACTOR = 3;
+  gsap.set(images, {
+    autoAlpha: 0,
+    transformOrigin: `50% 50%`,
+    scale: 0,
+  });
 
-            this.objects.drop.transforms.scaleX = Math.min(
-                progress,
-                timePassed % FACTOR
-            );
-            this.objects.drop.transforms.scaleY = Math.min(
-                progress,
-                timePassed % FACTOR
-            );
+  const timeline = gsap.timeline();
 
-            this.objects.drop.opacity = timePassed % FACTOR;
-            this.objects.drop.transforms.translateX =
-            this.objects.drop.transforms.scaleX < progress
-              ? progress - (timePassed % FACTOR)
-              : 0;
-            this.objects.drop.transforms.translateY = timePassed % FACTOR;
-          },
-          duration: `infinite`,
-          delay: 1000,
-          easing: Easing.EASE_IN_EXPO,
-        })
-    );
-    this.animations.push(
-        new Animation({
-          func: () => {
-            this.objects.drop.opacity = 1;
-          },
-          duration: 0,
-          delay: 1000,
-        })
-    );
-  }
-}
+  timeline.pause();
+
+  timeline
+    .add(keyHoleAnimation)
+    .add(satellitesAnimation, `<`)
+    .add(crocodileAnimation, `<0.75`)
+    .add(dropAnimation, `<0.35`);
+
+  return timeline;
+};

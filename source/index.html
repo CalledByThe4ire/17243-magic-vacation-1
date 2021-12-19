@@ -969,10 +969,138 @@
                 </svg>
               </h2>
               <div class="result__image-wrapper">
-                <canvas
-                  id="crocodile-scene"
-                  class="result__scene result__scene--crocodile"
-                ></canvas>
+                <div class="result__scene scene scene--crocodile">
+                  <h2 class="scene__header">
+                    <span class="visually-hidden">Не угадал!</span>
+                  </h2>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 1440 760"
+                    xml:space="preserve"
+                    class="scene__content"
+                  >
+                    <defs>
+                      <mask id="mask">
+                        <path
+                          d="M778.107 380.61c17.07-15.314 27.83-37.521 27.83-62.26 0-36.476-23.357-67.48-55.923-78.921L702.37 0H1440v760H853.6l-75.493-379.39z"
+                        />
+                        <path
+                          fill="#FFF"
+                          d="M778.107 380.61c17.07-15.314 27.83-37.521 27.83-62.26 0-36.476-23.357-67.48-55.923-78.921L702.37 0H0v760h853.6l-75.493-379.39z"
+                        />
+                      </mask>
+                    </defs>
+                    <g class="scene__paths">
+                      <path
+                        id="leaf-path"
+                        fill="none"
+                        stroke-miterlimit="10"
+                        d="M719.83893,380.46451
+  c0,0,22.78894-31.70636,62.42188-42.60541c39.633-10.89908,118.89886,19.81647,167.44922,4.9541
+  c48.55035-14.86234,91.15582-55.48611,91.15582-55.48611"
+                      />
+                      <path
+                        id="snowflake-path"
+                        fill="none"
+                        stroke-miterlimit="10"
+                        d="M719.83893,380.46451
+  c0,0,20.2041-79.84821,93.13745-71.33929c59.4494,6.93576,88.18329,90.16495,88.18329,90.16495"
+                      />
+                      <path
+                        id="flamingo-path"
+                        fill="none"
+                        stroke-miterlimit="10"
+                        d="M719.83893,380.46451
+  c0,0-10.98047-64.20993-78.27509-72.33014c-80.89923-9.76181-64.85571,75.19531-116.91718,64.15997"
+                      />
+                      <path
+                        id="watermelon-path"
+                        fill="none"
+                        stroke-miterlimit="10"
+                        d="M719.83893,380.46451
+  c0,0-21.73053,42.6351-78.27509,55.48611c-65.39435,14.86237-66.38519-9.90823-139.70612-14.86234
+  c-63.74194-4.30688-83.22919,6.93576-121.87131,50.53201c-22.05582,24.88345-50.53201,29.7247-50.53201,29.7247"
+                      />
+                      <path
+                        id="saturn-path"
+                        fill="none"
+                        stroke-miterlimit="10"
+                        d="M719.83893,380.46451
+		c0,0,24.80078,34.79495,83.22919,23.77975c111.56427-21.03259,138.5943,53.80945,165.7597,111.49536
+		c22.38806,47.5412,97.01495,30.16907,97.01495,30.16907"
+                      />
+                    </g>
+                    <g class="scene__images">
+                      <image
+                        class="scene__image scene__image--key"
+                        overflow="visible"
+                        width="171"
+                        height="292"
+                        xlink:href="img/scenes/crocodile/key.png"
+                        transform="translate(634.906 234.704)"
+                      />
+                      <g mask="url(#mask)">
+                        <image
+                          class="scene__image scene__image--crocodile"
+                          overflow="visible"
+                          width="1079"
+                          height="342"
+                          xlink:href="img/scenes/crocodile/crocodile.png"
+                          transform="translate(469.541 382.877) scale(.49185)"
+                        />
+                      </g>
+                      <image
+                        class="scene__image scene__image--saturn"
+                        overflow="visible"
+                        width="1297"
+                        height="832"
+                        xlink:href="img/scenes/crocodile/saturn.png"
+                        transform="matrix(.092 0 0 .092 996.06 525.01)"
+                      />
+                      <image
+                        class="scene__image scene__image--leaf"
+                        overflow="visible"
+                        width="751"
+                        height="926"
+                        xlink:href="img/scenes/crocodile/leaf.png"
+                        transform="translate(1035.765 184.73) scale(.11453)"
+                      />
+                      <image
+                        class="scene__image scene__image--drop"
+                        overflow="visible"
+                        width="39"
+                        height="59"
+                        xlink:href="img/scenes/crocodile/drop.png"
+                        transform="translate(671.853 436.915)"
+                      />
+                      <image
+                        class="scene__image scene__image--flamingo"
+                        overflow="visible"
+                        width="932"
+                        height="1053"
+                        xlink:href="img/scenes/crocodile/flamingo.png"
+                        transform="translate(446.488 270.315) scale(.10564)"
+                      />
+                      <image
+                        class="scene__image scene__image--watermelon"
+                        overflow="visible"
+                        width="876"
+                        height="711"
+                        xlink:href="img/scenes/crocodile/watermelon.png"
+                        transform="translate(263.669 446.627) scale(.0972)"
+                      />
+                      <image
+                        class="scene__image scene__image--snowflake"
+                        overflow="visible"
+                        width="818"
+                        height="956"
+                        xlink:href="img/scenes/crocodile/snowflake.png"
+                        transform="translate(863.937 364.223) scale(.07902)"
+                      />
+                    </g>
+                  </svg>
+                </div>
               </div>
               <button
                 class="result__button result-button js-play"

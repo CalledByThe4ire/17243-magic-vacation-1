@@ -1,8 +1,6 @@
-import Scene2DSeaCalf from "./scene-2d-sea-calf";
-import Scene2DCrocodile from './scene-2d-crocodile';
+import Scene2DCrocodile from "./scene-2d-crocodile";
 
 const resultMapping = {
-  result: Scene2DSeaCalf,
   result3: Scene2DCrocodile,
 };
 
@@ -24,8 +22,8 @@ export default () => {
         });
         targetEl[0].classList.add(`screen--show`);
         targetEl[0].classList.remove(`screen--hidden`);
-        // eslint-disable-next-line no-new
-        new resultMapping[targetEl[0].id]();
+        const timeline = resultMapping[targetEl[0].id]();
+        timeline.play();
       });
     }
 

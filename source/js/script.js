@@ -13,7 +13,6 @@ import prizes from "./modules/prizes.js";
 import rules from "./modules/rules.js";
 import game from "./modules/game.js";
 import FullPageScroll from "./modules/full-page-scroll";
-import Scene2DCrocodile from "./modules/scene-2d-crocodile";
 
 // init modules
 init();
@@ -31,6 +30,4 @@ rules();
 game();
 
 const fullPageScroll = new FullPageScroll();
-// eslint-disable-next-line no-unused-vars
-const scene2DCrocodile = new Scene2DCrocodile();
 fullPageScroll.init();

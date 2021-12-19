@@ -3,23 +3,23 @@
   flex-direction: column;
   flex-grow: 1;
   width: 100%;
-  padding: 15rem 5.7rem 6rem;
+  // padding: 15rem 5.7rem 6rem;
 
-  @media (min-width: $stop-scaling) {
-    padding: 150px 57px 60px;
-  }
+  // @media (min-width: $stop-scaling) {
+  //   padding: 150px 57px 60px;
+  // }
 
-  @media (orientation: portrait) {
-    padding: 8rem 0 4rem;
-  }
+  // @media (orientation: portrait) {
+  //   padding: 8rem 0 4rem;
+  // }
 
-  @media (max-width: $tablet) and (orientation: landscape) {
-    padding: 8rem 0 3rem;
-  }
+  // @media (max-width: $tablet) and (orientation: landscape) {
+  //   padding: 8rem 0 3rem;
+  // }
 
-  @media (max-width: $mobile) and (orientation: landscape) {
-    padding: 3rem 0;
-  }
+  // @media (max-width: $mobile) and (orientation: landscape) {
+  //   padding: 3rem 0;
+  // }
 }
 
 .result__content-block {
@@ -40,9 +40,9 @@
     justify-content: center;
   }
 
-  @media (max-width: $mobile) {
-    height: 628px;
-  }
+  // @media (max-width: $mobile) {
+  //   height: 628px;
+  // }
 }
 
 .result__image {
@@ -306,12 +306,12 @@
   }
 }
 
-.result__scene {
-  &--sea-calf,
-  &--crocodile {
-    @include center();
-  }
-}
+// .result__scene {
+//   &--sea-calf,
+//   &--crocodile {
+//     @include center();
+//   }
+// }
 
 .result__title {
   position: absolute;
