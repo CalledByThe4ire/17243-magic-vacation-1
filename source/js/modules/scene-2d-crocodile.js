@@ -1,5 +1,6 @@
 import {gsap} from "gsap";
 import {MotionPathPlugin} from "gsap/MotionPathPlugin";
+import {getMotionPathSettings} from '../utils';
 
 gsap.registerPlugin(MotionPathPlugin);
 
@@ -74,20 +75,6 @@ export default () => {
         autoAlpha: 1,
       },
     };
-
-    const getMotionPathSettings = (
-        id,
-        options = {start: 0, end: 1, autoRotate: true}
-    ) => ({
-      motionPath: {
-        path: `#${id}-path`,
-        align: `#${id}-path`,
-        start: options.start,
-        end: options.end,
-        autoRotate: options.autoRotate,
-        alignOrigin: [0.5, 0.5],
-      },
-    });
 
     const timeline = gsap.timeline({
       defaults: State.FROM,

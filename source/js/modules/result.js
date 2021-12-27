@@ -1,6 +1,8 @@
 import Scene2DCrocodile from "./scene-2d-crocodile";
+import Scene2DWalrus from './scene-2d-walrus';
 
 const resultMapping = {
+  result: Scene2DWalrus,
   result3: Scene2DCrocodile,
 };
 

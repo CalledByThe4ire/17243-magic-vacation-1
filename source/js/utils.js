@@ -182,8 +182,24 @@ export const setActiveColor = (colorName, hue, saturation, lightness) => {
 
 export const pad = (value) => (`0` + Math.floor(value)).slice(-2);
 
-export const getPercentage = (partialValue, totalValue) => (100 * partialValue) / totalValue;
-export const getPx = (partialValue, totalValue) => totalValue * (partialValue / 100);
+export const getPercentage = (partialValue, totalValue) =>
+  (100 * partialValue) / totalValue;
+export const getPx = (partialValue, totalValue) =>
+  totalValue * (partialValue / 100);
+
+export const getMotionPathSettings = (
+    id,
+    options = {start: 0, end: 1, autoRotate: true}
+) => ({
+  motionPath: {
+    path: `#${id}-path`,
+    align: `#${id}-path`,
+    start: options.start,
+    end: options.end,
+    autoRotate: options.autoRotate,
+    alignOrigin: [0.5, 0.5],
+  },
+});
 
 export class Animation {
   constructor(options) {

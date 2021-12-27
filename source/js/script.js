@@ -1,3 +1,5 @@
+import "regenerator-runtime/runtime";
+
 // modules
 import init from "./modules/init.js";
 import mobileHeight from "./modules/mobile-height-adjust.js";
@@ -13,6 +15,7 @@ import prizes from "./modules/prizes.js";
 import rules from "./modules/rules.js";
 import game from "./modules/game.js";
 import FullPageScroll from "./modules/full-page-scroll";
+import Scene2DWalrus from './modules/scene-2d-walrus';
 
 // init modules
 init();
@@ -28,6 +31,7 @@ intro();
 prizes();
 rules();
 game();
+Scene2DWalrus();
 
 const fullPageScroll = new FullPageScroll();
 fullPageScroll.init();

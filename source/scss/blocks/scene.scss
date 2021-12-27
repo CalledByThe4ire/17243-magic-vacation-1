@@ -1,45 +1,48 @@
 .scene {
   @include center();
+  $scene: &;
   z-index: 9999;
   display: flex;
+
+  &--crocodile {
+    #{$scene}__image {
+      &--key {
+        width: 12%;
+      }
+
+      &--crocodile {
+        width: 38%;
+      }
+
+      &--drop {
+        width: 2.5%;
+      }
+
+      &--flamingo {
+        width: 7%;
+      }
+
+      &--leaf {
+        width: 6%;
+      }
+
+      &--saturn {
+        width: 8%;
+      }
+
+      &--snowflake {
+        width: 4.5%;
+      }
+
+      &--watermelon {
+        width: 6%;
+      }
+    }
+  }
 
   @media (max-width: $tablet) and (orientation: portrait) {
     left: auto;
 
     transform: translate(0, -50%);
-  }
-
-  &__image {
-    &--key {
-      width: 12%;
-    }
-
-    &--crocodile {
-      width: 38%;
-    }
-
-    &--drop {
-      width: 2.5%;
-    }
-
-    &--flamingo {
-      width: 7%;
-    }
-
-    &--leaf {
-      width: 6%;
-    }
-
-    &--saturn {
-      width: 8%;
-    }
-
-    &--snowflake {
-      width: 4.5%;
-    }
-
-    &--watermelon {
-      width: 6%;
-    }
   }
 }
