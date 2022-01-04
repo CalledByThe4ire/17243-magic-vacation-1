@@ -106,11 +106,13 @@
       attributeName="opacity"
       attributeType="CSS"
       to="0"
-      dur="0s"
-      begin="0s"
       end="suitcaseMotion.begin"
     />
-    <animateMotion id="suitcaseMotion" fill="freeze" dur="2s" begin="0.5s">
+    <animateMotion
+      id="suitcaseMotion"
+      fill="freeze"
+      dur="2s"
+      begin="0.5s">
       <mpath href="#motionPath" />
     </animateMotion>
     <animateTransform
@@ -119,6 +121,7 @@
       type="translate"
       values="-190 -120"
       fill="freeze"
+      begin="suitcaseMotion.begin"
     />
     <animateTransform
       dur="2s"
@@ -128,6 +131,7 @@
       keyTimes="0; 0.4; 0.8; 1"
       additive="sum"
       fill="freeze"
+      begin="suitcaseMotion.begin"
     />
     <animateTransform
       dur="2s"
@@ -137,6 +141,7 @@
       keyTimes="0; 0.1; 0.4; 0.8; 1"
       additive="sum"
       fill="freeze"
+      begin="suitcaseMotion.begin"
     />
 
     <path

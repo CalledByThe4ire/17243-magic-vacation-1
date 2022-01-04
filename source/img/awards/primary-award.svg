@@ -26,12 +26,14 @@
     />
     <g id="airship" style="transform-origin: center center;">
       <animateTransform
+        id="airshipAnimation"
         attributeName="transform"
         type="scale"
         values="1 1; 1 0.95; 1 1; 1 0.95; 1 1"
         keyTimes="0; 0.25; 0.5; 0.75; 1"
         dur="2s"
         repeatCount="indefinite"
+        begin="0s"
       />
       <animateTransform
         attributeName="transform"
@@ -41,6 +43,7 @@
         dur="2s"
         additive="sum"
         repeatCount="indefinite"
+        begin="airshipAnimation.begin"
       />
       <animateTransform
         attributeName="transform"
@@ -50,6 +53,7 @@
         additive="sum"
         dur="2s"
         repeatCount="indefinite"
+        begin="airshipAnimation.begin"
       />
       <g id="airshipGondola">
         <path
@@ -174,8 +178,8 @@
         values="200 0; 0 0"
         keyTimes="0; 1"
         dur="2s"
-        begin="0s"
         repeatCount="indefinite"
+        begin="airshipAnimation.begin"
       />
       <animate
         attributeName="opacity"
@@ -184,6 +188,7 @@
         keyTimes="0; 0.25; 0.75; 1"
         dur="2s"
         repeatCount="indefinite"
+        begin="airshipAnimation.begin"
       />
       <line
         x1="68.95"
@@ -214,8 +219,8 @@
         values="0 -25; -200 -25"
         keyTimes="0; 1"
         dur="2s"
-        begin="1s"
         repeatCount="indefinite"
+        begin="airshipAnimation.begin + 1s"
       />
       <animate
         attributeName="opacity"
@@ -223,8 +228,8 @@
         values="0; 1; 1; 0"
         keyTimes="0; 0.25; 0.75; 1"
         dur="2s"
-        begin="1s"
         repeatCount="indefinite"
+        begin="airshipAnimation.begin + 1s"
       />
       <line
         x1="258.96"
@@ -267,6 +272,7 @@
         keyTimes="0; 0.5; 1"
         dur="0.5s"
         repeatCount="indefinite"
+        begin="airshipAnimation.begin"
       />
       <line
         x1="106.25"
@@ -288,6 +294,7 @@
         keyTimes="0; 0.5; 1"
         dur="0.75s"
         repeatCount="indefinite"
+        begin="airshipAnimation.begin"
       />
       <line
         x1="106.25"
@@ -309,6 +316,7 @@
         keyTimes="0; 0.5; 1"
         dur="0.35s"
         repeatCount="indefinite"
+        begin="airshipAnimation.begin"
       />
       <line
         x1="106.25"
@@ -360,18 +368,20 @@
         <animateTransform
           attributeName="transform"
           type="translate"
-          from="240, 175"
-          to="40, 175"
+          from="240 175"
+          to="40 175"
           dur="4s"
           repeatCount="indefinite"
+          begin="windowMorphing.end"
         />
         <animateTransform
           attributeName="transform"
           type="scale"
-          values="0.5, 0.5"
+          values="0.5 0.5"
           additive="sum"
           dur="1s"
           repeatCount="indefinite"
+          begin="windowMorphing.end"
         />
         <line
           x1="28.18"
@@ -440,7 +450,7 @@
           from="M 289.94 327.88 L 244.88 327.88 L 212.8 296.58 C 212.096 295.985 211.064 295.985 210.36 296.58 L 200.16 306.81 C 199.514 307.369 198.556 307.369 197.91 306.81 L 178.91 286.64 C 178.015 285.883 176.705 285.883 175.81 286.64 C 167.003 295.187 158.197 303.733 149.39 312.28 C 148.746 312.843 147.784 312.843 147.14 312.28 C 146.263 311.307 145.387 310.333 144.51 309.36 C 143.856 308.761 142.854 308.761 142.2 309.36 C 136.343 315.907 130.487 322.453 124.63 329 L 80.78 329"
           to="M 289.94 328 L 267.493 328 L 245.045 328 C 237.563 328 230.08 328 222.597 328 L 200.15 328 C 199.29 328 198.59 328 197.9 328 L 178.9 328 C 178.15 328 177.593 328 177.114 328 C 176.635 328 176.235 328 175.8 328 C 165.033 328 154.267 328 143.5 328 C 143.137 328 142.831 328 142.561 328 C 142.291 328 142.057 328 141.836 328 C 141.614 328 141.407 328 141.19 328 L 80.78 328"
           dur="0.5s"
-          begin="4s"
+          begin="airshipAnimation.begin + 4s"
           fill="freeze"
         />
       </path>
@@ -452,12 +462,13 @@
         attributeName="opacity"
         attributeType="CSS"
         to="0"
+        begin="airshipAnimation.begin"
         end="windowMorphing.end - 0.20s"
       />
       <animateTransform
         attributeName="transform"
         type="translate"
-        from="-200, 0"
+        from="-200 0"
         to="0, 0"
         dur="0.25s"
         keySplines="0.42 0 1 1"
@@ -479,12 +490,13 @@
         attributeName="opacity"
         attributeType="CSS"
         to="0"
+        begin="airshipAnimation.begin"
         end="windowMorphing.begin + 0.25s"
       />
       <animateTransform
         attributeName="transform"
         type="translate"
-        from="-200, 0"
+        from="-200 0"
         to="0, 0"
         dur="0.25s"
         keySplines="0.42 0 1 1"
@@ -575,13 +587,14 @@
         attributeName="opacity"
         attributeType="CSS"
         to="0"
+        begin="airshipAnimation.begin"
         end="windowMorphing.begin + 0.25s"
       />
       <animateTransform
         attributeName="transform"
         type="translate"
-        from="-200, 0"
-        to="0, 0"
+        from="-200 -2"
+        to="0 -2"
         dur="0.25s"
         keySplines="0.42 0 1 1"
         calcMode="spline"
