@@ -1,0 +1,597 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 350 330"
+>
+  <style>
+    svg g {
+      transform-box: fill-box;
+    }
+  </style>
+  <defs>
+    <clipPath id="theClipPath">
+      <rect x="00" y="00" fill="#000000" width="350" height="288" />
+    </clipPath>
+  </defs>
+  <g id="suitcase">
+    <set attributeName="opacity" attributeType="CSS" to="0" />
+    <animateTransform
+      id="suitcaseAnimation"
+      attributeName="transform"
+      type="translate"
+      from="500 0"
+      to="0 0"
+      dur="1s"
+      fill="freeze"
+    />
+    <animate
+      attributeName="opacity"
+      attributeType="CSS"
+      values="0; 1"
+      dur="0.5s"
+      fill="freeze"
+      begin="suitcaseAnimation.begin + 0.5s"
+    />
+    <g id="capClosed">
+      <set
+        attributeName="opacity"
+        attributeType="CSS"
+        to="0"
+        begin="suitcaseAnimation.end"
+      />
+      <path
+        d="M225.88,258.06H82.68a11.62,11.62,0,0,0-11.57,11.61v19.75H237.44V269.66a11.62,11.62,0,0,0-11.56-11.61"
+        fill="#a67ee5"
+      />
+      <path
+        d="M225.88,258.06H82.68a11.62,11.62,0,0,0-11.57,11.61v19.75H237.44V269.66A11.62,11.62,0,0,0,225.88,258.06Z"
+        fill="none"
+        stroke="#fff"
+        stroke-miterlimit="10"
+        stroke-width="2"
+      />
+      <path
+        d="M267.11,258.06H119.23a11.81,11.81,0,0,0-11.93,11.61v19.75H279V269.66a11.81,11.81,0,0,0-11.93-11.61"
+        fill="#a67ee5"
+      />
+      <path
+        d="M267.11,258.06H119.23a11.81,11.81,0,0,0-11.93,11.61v19.75H279V269.66A11.81,11.81,0,0,0,267.11,258.06Z"
+        fill="none"
+        stroke="#fff"
+        stroke-miterlimit="10"
+        stroke-width="2"
+      />
+      <path
+        d="M278.74,279.41a5.34,5.34,0,1,0-5.32-5.34,5.32,5.32,0,0,0,5.32,5.34"
+        fill="#a67ee5"
+      />
+      <ellipse
+        cx="278.74"
+        cy="274.07"
+        rx="5.31"
+        ry="5.34"
+        fill="none"
+        stroke="#fff"
+        stroke-miterlimit="10"
+        stroke-width="2"
+      />
+      <path
+        d="M277.62,269.66v9.75H266.89a5.72,5.72,0,0,1-5.71-5.73V258.06h4.88a11.61,11.61,0,0,1,11.56,11.61"
+        fill="#a67ee5"
+      />
+      <path
+        d="M277.62,269.66v9.75H266.89a5.72,5.72,0,0,1-5.71-5.73V258.06h4.88A11.61,11.61,0,0,1,277.62,269.66Z"
+        fill="none"
+        stroke="#fff"
+        stroke-miterlimit="10"
+        stroke-width="2"
+      />
+    </g>
+
+    <g id="capOpened">
+      <set attributeName="opacity" attributeType="CSS" to="0" />
+      <set
+        id="capOpenedAnimation"
+        attributeName="opacity"
+        attributeType="CSS"
+        to="1"
+        begin="suitcaseAnimation.end"
+      />
+      <path
+        d="M253.93,232.11a5.69,5.69,0,1,0-5.69-5.69,5.69,5.69,0,0,0,5.69,5.69"
+        fill="#a67ee5"
+      />
+      <circle
+        cx="253.93"
+        cy="226.42"
+        r="5.69"
+        fill="none"
+        stroke="#fff"
+        stroke-miterlimit="10"
+        stroke-width="2"
+      />
+      <path
+        d="M240.3,210.48H67.19a12,12,0,0,0-12,11.9V276a13,13,0,0,0,13,13h184V222.38a12,12,0,0,0-11.94-11.9"
+        fill="#a67ee5"
+      />
+      <path
+        d="M240.3,210.48H67.19a12,12,0,0,0-12,11.9V276a13,13,0,0,0,13,13h184V222.38A12,12,0,0,0,240.3,210.48Z"
+        fill="none"
+        stroke="#fff"
+        stroke-miterlimit="10"
+        stroke-width="2"
+      />
+      <path
+        d="M70.24,289V225.49a15,15,0,0,1,15-15h0.5"
+        fill="none"
+        stroke="#fff"
+        stroke-width="2"
+      />
+    </g>
+    <g id="base">
+      <g>
+        <path
+          d="M280.29,318.62a5.72,5.72,0,1,0-5.12-5.69,5.43,5.43,0,0,0,5.12,5.69"
+          fill="#a67ee5"
+        />
+        <ellipse
+          cx="280.29"
+          cy="312.93"
+          rx="5.12"
+          ry="5.69"
+          fill="none"
+          stroke="#fff"
+          stroke-miterlimit="10"
+          stroke-width="2"
+        />
+        <path
+          d="M230.22,328.86h-148a11.85,11.85,0,0,1-11.95-11.67V289H242.16v28.17a11.84,11.84,0,0,1-11.94,11.67"
+          fill="#a67ee5"
+        />
+        <path
+          d="M230.22,328.86h-148a11.85,11.85,0,0,1-11.95-11.67V289H242.16v28.17A11.84,11.84,0,0,1,230.22,328.86Z"
+          fill="none"
+          stroke="#fff"
+          stroke-miterlimit="10"
+          stroke-width="2"
+        />
+        <path
+          d="M266.72,328.86h-147a11.81,11.81,0,0,1-11.87-11.67V289H278.58v28.17a11.79,11.79,0,0,1-11.86,11.67"
+          fill="#a67ee5"
+        />
+        <path
+          d="M266.72,328.86h-147a11.81,11.81,0,0,1-11.87-11.67V289H278.58v28.17A11.79,11.79,0,0,1,266.72,328.86Z"
+          fill="none"
+          stroke="#fff"
+          stroke-miterlimit="10"
+          stroke-width="2"
+        />
+        <path
+          d="M215,314.07H180.49a4.27,4.27,0,0,1-4.35-4.16V298.21a1.24,1.24,0,0,1,1.27-1.22h2.88a1.25,1.25,0,0,1,1.27,1.22v10a1.33,1.33,0,0,0,1.35,1.29h29.71a1.33,1.33,0,0,0,1.35-1.29v-10a1.24,1.24,0,0,1,1.27-1.22h2.88a1.25,1.25,0,0,1,1.27,1.22V309.9a4.27,4.27,0,0,1-4.35,4.16"
+          fill="#a67ee5"
+        />
+        <path
+          d="M215,314.07H180.49a4.27,4.27,0,0,1-4.35-4.16V298.21a1.24,1.24,0,0,1,1.27-1.22h2.88a1.25,1.25,0,0,1,1.27,1.22v10a1.33,1.33,0,0,0,1.35,1.29h29.71a1.33,1.33,0,0,0,1.35-1.29v-10a1.24,1.24,0,0,1,1.27-1.22h2.88a1.25,1.25,0,0,1,1.27,1.22V309.9A4.27,4.27,0,0,1,215,314.07Z"
+          fill="none"
+          stroke="#fff"
+          stroke-miterlimit="10"
+          stroke-width="2"
+        />
+        <rect x="138.58" y="282.19" width="9.1" height="12.52" fill="#a67ee5" />
+        <rect
+          x="138.58"
+          y="282.19"
+          width="9.1"
+          height="12.52"
+          fill="none"
+          stroke="#fff"
+          stroke-miterlimit="10"
+          stroke-width="2"
+        />
+        <rect x="247.85" y="282.19" width="9.1" height="12.52" fill="#a67ee5" />
+        <rect
+          x="247.85"
+          y="282.19"
+          width="9.1"
+          height="12.52"
+          fill="none"
+          stroke="#fff"
+          stroke-miterlimit="10"
+          stroke-width="2"
+        />
+        <path
+          d="M278.58,317.11v-9.87h-10.4a5.67,5.67,0,0,0-5.53,5.8v15.82h4.73c6.16,0,11.2-5.29,11.2-11.75"
+          fill="#a67ee5"
+        />
+        <path
+          d="M278.58,317.11v-9.87h-10.4a5.67,5.67,0,0,0-5.53,5.8v15.82h4.73C273.54,328.86,278.58,323.58,278.58,317.11Z"
+          fill="none"
+          stroke="#fff"
+          stroke-miterlimit="10"
+          stroke-width="2"
+        />
+        <path
+          d="M100,301.54H79.22a1,1,0,0,1-1-1V298a1,1,0,0,1,1-1H100a1,1,0,0,1,1,1v2.58a1,1,0,0,1-1,1"
+          fill="#a67ee5"
+        />
+        <path
+          d="M100,301.54H79.22a1,1,0,0,1-1-1V298a1,1,0,0,1,1-1H100a1,1,0,0,1,1,1v2.58A1,1,0,0,1,100,301.54Z"
+          fill="none"
+          stroke="#fff"
+          stroke-miterlimit="10"
+          stroke-width="2"
+        />
+      </g>
+      <g>
+        <line
+          x1="46.24"
+          y1="329"
+          x2="303.76"
+          y2="329"
+          fill="none"
+          stroke="#fff"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+        />
+      </g>
+    </g>
+  </g>
+
+  <g
+    id="balloon"
+    clip-path="url(#theClipPath)"
+    style="transform-origin: bottom center"
+  >
+    <set attributeName="opacity" attributeType="CSS" to="0" />
+    <animate
+      attributeName="opacity"
+      attributeType="CSS"
+      values="0; 1"
+      dur="0.25s"
+      fill="freeze"
+      begin="capOpenedAnimation.begin"
+    />
+    <g id="ropeWrapper" style="transform-origin: bottom center">
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        values="0; 0; 0; -5; 0; -5; 0; 5; -5; 0"
+        keyTimes="0; 0.1; 0.35; 0.4; 0.45; 0.55; 0.65; 0.7; 0.8; 1"
+        keySplines="0 0 1 1; 0 0 1 1; 0 0 1 1; 0 0 1 1; 0.12 0 0.39 0; 0.12 0 0.39 0; 0.12 0 0.39 0; 0.11 0 0.5 0; 0.55 0 1 0.45"
+        calcMode="spline"
+        begin="capOpenedAnimation.begin - 0.25s"
+        dur="2s"
+        fill="freeze"
+      />
+      <g id="rope" style="transform-origin: bottom center">
+        <animateTransform
+          attributeName="transform"
+          type="translate"
+          values="0 0; 0 250; 0 0; 0 35; 0 0; 0 25; 0 0; 0 15; 0 5; 0 0"
+          keyTimes="0; 0.1; 0.35; 0.4; 0.45; 0.55; 0.65; 0.7; 0.8; 1"
+          keySplines="0 0 1 1; 0 0 1 1; 0 0 1 1; 0 0 1 1; 0.12 0 0.39 0; 0.12 0 0.39 0; 0.12 0 0.39 0; 0.11 0 0.5 0; 0.55 0 1 0.45"
+          calcMode="spline"
+          begin="capOpenedAnimation.begin - 0.25s"
+          dur="2s"
+          fill="freeze"
+        />
+        <line
+          x1="107.65"
+          y1="166.71"
+          x2="107.65"
+          y2="289.02"
+          fill="none"
+          stroke="#fff"
+          stroke-linecap="round"
+          stroke-miterlimit="10"
+          stroke-width="2"
+        />
+      </g>
+    </g>
+    <g id="headWrapper" style="transform-origin: bottom center">
+      <animateTransform
+        id="headWrapperAnimation"
+        attributeName="transform"
+        type="translate"
+        values="0 0; 0 250; 0 0; -10 35; 0 0; -10 25; 0 0; 10 15; -10 5; 0 0"
+        keyTimes="0; 0.1; 0.35; 0.4; 0.45; 0.55; 0.65; 0.7; 0.8; 1"
+        keySplines="0 0 1 1; 0 0 1 1; 0 0 1 1; 0 0 1 1; 0.12 0 0.39 0; 0.12 0 0.39 0; 0.12 0 0.39 0; 0.11 0 0.5 0; 0.55 0 1 0.45"
+        calcMode="spline"
+        begin="capOpenedAnimation.begin - 0.25s"
+        dur="2s"
+        fill="freeze"
+      />
+      <g id="head" style="transform-origin: bottom center">
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          values="0; 45; 0; -15; 0; -15; 0; -15; 25; 0"
+          keyTimes="0; 0.1; 0.35; 0.4; 0.45; 0.55; 0.65; 0.7; 0.8; 1"
+          keySplines="0 0 1 1; 0 0 1 1; 0 0 1 1; 0 0 1 1; 0.12 0 0.39 0; 0.12 0 0.39 0; 0.12 0 0.39 0; 0.11 0 0.5 0; 0.55 0 1 0.45"
+          calcMode="spline"
+          begin="capOpenedAnimation.begin - 0.25s"
+          dur="2s"
+          fill="freeze"
+        />
+        <path
+          d="M106.58,161.87l-2.19,3.79a1.34,1.34,0,0,0,1.17,2h4.37a1.34,1.34,0,0,0,1.16-2l-2.18-3.79a1.35,1.35,0,0,0-2.33,0"
+          fill="#fff"
+        />
+        <path
+          d="M107.74,79.42a32.91,32.91,0,0,1,32.9,32.89c0,18.17-15.09,48.89-33.25,48.89s-32.55-30.73-32.55-48.89a32.91,32.91,0,0,1,32.9-32.89m0-1.61a34.54,34.54,0,0,0-34.5,34.5c0,9.51,3.8,22.1,9.68,32.07,7,11.88,15.68,18.42,24.46,18.42s17.6-6.54,24.81-18.4c6.1-10,10.05-22.64,10.05-32.09a34.54,34.54,0,0,0-34.5-34.5"
+          fill="#fff"
+        />
+        <path
+          d="M96.06,112.39c0-18.16,5.23-32.89,11.68-32.89a32.91,32.91,0,0,0-32.9,32.89c0,18.17,14.38,48.89,32.55,48.89h0.17c-6.43-.19-11.5-30.77-11.5-48.89"
+          fill="#76abff"
+        />
+        <path
+          d="M140.64,112.39a32.91,32.91,0,0,0-32.9-32.89c6.45,0,11.68,14.73,11.68,32.89s-5.29,48.48-11.68,48.87c18-.39,32.9-30.82,32.9-48.87"
+          fill="#1553b7"
+        />
+        <path
+          d="M119.42,112.39c0-18.16-5.23-32.89-11.68-32.89S96.06,94.23,96.06,112.39s5.07,48.69,11.5,48.89h0.18c6.39-.4,11.68-30.83,11.68-48.88"
+          fill="#3b7bf2"
+        />
+        <path
+          d="M100.54,105.36a5.7,5.7,0,1,0,5.7,5.7,5.39,5.39,0,0,0-5.7-5.7m0,8c-1.86,0-3.06-.93-3.06-2.29s1.21-2.29,3.06-2.29,3.07,0.93,3.07,2.29-1.25,2.29-3.07,2.29"
+          fill="#fff"
+        />
+        <path
+          d="M114.74,105.36a1.78,1.78,0,0,1,1.46,2.8L102.87,127.5a1.79,1.79,0,0,1-2.94-2l13.34-19.34a1.77,1.77,0,0,1,1.47-.77"
+          fill="#fff"
+        />
+        <path
+          d="M116.21,116.88a5.7,5.7,0,1,0,5.7,5.7,5.4,5.4,0,0,0-5.7-5.7m0,8c-1.86,0-3.06-.93-3.06-2.29s1.21-2.29,3.06-2.29,3.07,0.9,3.07,2.29-1.21,2.29-3.07,2.29"
+          fill="#fff"
+        />
+      </g>
+    </g>
+  </g>
+  <g id="flowers" clip-path="url(#theClipPath)">
+    <set attributeName="opacity" attributeType="CSS" to="0" />
+    <animate
+      id="flowersAnimation"
+      attributeName="opacity"
+      attributeType="CSS"
+      from="0"
+      to="1"
+      begin="capOpenedAnimation.begin"
+      dur="0.35s"
+      fill="freeze"
+    />
+    <g id="flower1Wrapper" style="transform-origin: bottom center">
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 0;-12 16"
+        keySplines="0.42 0 1 1"
+        calcMode="spline"
+        dur="0.75s"
+        begin="flowersAnimation.end - 0.4s"
+        fill="freeze"
+      />
+      <g id="flower1" style="transform-origin: left center">
+        <animateTransform
+          id="flower1Animation"
+          attributeName="transform"
+          type="rotate"
+          values="0; -105"
+          dur="0.75s"
+          begin="flowersAnimation.end - 0.4s"
+          fill="freeze"
+        />
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          values="-105; -100; -105"
+          dur="1.5s"
+          begin="flower1Animation.end"
+          fill="freeze"
+          additivie="sum"
+          repeatCount="indefinite"
+        />
+        <path
+          fill="none"
+          stroke="#3B7BF2"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M268.1 270.375c-36.845 16.62-89.707 17.06-89.707 17.06"
+        />
+        <path
+          fill="#76ABFF"
+          d="M279.28 256.398c-8.733 4.787-12.455 14.845-12.455 14.845s10.473 2.287 19.194-2.492 12.457-14.854 12.457-14.854-10.473-2.288-19.196 2.501"
+        />
+        <path
+          fill="#3B7BF2"
+          d="M263.342 281.004c-8.785-4.672-19.234-2.246-19.234-2.246s3.805 10.043 12.604 14.698c8.8 4.655 19.234 2.246 19.234 2.246s-3.804-10.043-12.604-14.698"
+        />
+        <path
+          fill="#3B7BF2"
+          d="M246.362 259.536c-4.684 8.793-2.244 19.224-2.244 19.224s10.043-3.804 14.698-12.604c4.655-8.799 2.283-19.215 2.283-19.215s-10.045 3.814-14.698 12.604"
+        />
+        <path
+          fill="#1553B7"
+          d="M235.202 288.093c-8.417-5.329-19.005-3.67-19.005-3.67s3.057 10.279 11.466 15.596 18.995 3.667 18.995 3.667-3.057-10.279-11.466-15.595M219.857 265.416c-5.32 8.42-3.67 19.005-3.67 19.005s10.28-3.057 15.598-11.476c5.32-8.419 3.67-19.005 3.67-19.005s-10.28 3.057-15.598 11.476"
+        />
+      </g>
+    </g>
+    <g id="flower3Wrapper" style="transform-origin: bottom center">
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        values="0 0;-5 0"
+        keySplines="0.42 0 1 1"
+        calcMode="spline"
+        dur="0.75s"
+        begin="flowersAnimation.end - 0.4s"
+        fill="freeze"
+      />
+      <g id="flower3" style="transform-origin: left center">
+        <animateTransform
+          id="flower3Animation"
+          attributeName="transform"
+          type="rotate"
+          values="0; -45"
+          dur="0.75s"
+          begin="flowersAnimation.end - 0.4s"
+          fill="freeze"
+        />
+        <animateTransform
+          attributeName="transform"
+          type="rotate"
+          values="0; 5; 0"
+          dur="1.25s"
+          begin="flower3Animation.end"
+          fill="freeze"
+          additive="sum"
+          repeatCount="indefinite"
+        />
+        <path
+          fill="#3B7BF2"
+          d="M198.04272,274.98853c-4.5972,8.18329-14.12175,11.57858-14.12175,11.57858
+        s-2.08212-9.89114,2.51471-18.08856s14.12175-11.57858,14.12175-11.57858S202.63266,266.79834,198.04272,274.98853"
+        />
+        <path
+          fill="#3B7BF2"
+          d="M195.49232,300.68201c-8.1974-4.59683-11.5786-14.12173-11.5786-14.12173s9.89116-2.08212,18.08856,2.51468
+        c8.1974,4.59683,11.5786,14.12173,11.5786,14.12173S203.68248,305.27194,195.49232,300.68201"
+        />
+        <path
+          fill="none"
+          stroke="#3B7BF2"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M196.75156,283.27682
+        c-6.40909,1.21948-12.72798,2.87259-18.91312,4.94806"
+        />
+        <path
+          fill="#76ABFF"
+          d="M212.87445,288.26883c-9.34927,0.88678-17.5526-5.02554-17.5526-5.02554s6.96062-7.33224,16.29578-8.21866
+        c9.33514-0.88638,17.55948,5.01831,17.55948,5.01831S222.21649,287.37518,212.87445,288.26883"
+        />
+      </g>
+    </g>
+    <g id="flower2">
+      <animateTransform
+        id="flower2Animation"
+        attributeName="transform"
+        type="rotate"
+        values="0; -90"
+        dur="0.75s"
+        begin="flowersAnimation.end - 0.4s"
+        fill="freeze"
+      />
+      <animateTransform
+        id="flower2Animation"
+        attributeName="transform"
+        type="rotate"
+        values="0; 5; 0"
+        dur="1.75s"
+        begin="flower2Animation.end"
+        fill="freeze"
+        additive="sum"
+        repeatCount="indefinite"
+      />
+      <path
+        fill="none"
+        stroke="#FFFFFF"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M187.42249,291.31982
+        c0,0,74.72485,6.98212,90.68683,38.11523"
+      />
+      <path
+        fill="#3B7BF2"
+        d="M278.74527,326.93344l24.64978,8.8363c-0.31821,3.09207-1.28806,6.08157-2.84561,8.77161
+        c2.50568,3.55151,1.65781,8.46188-1.89374,10.96756c-3.20087,2.2583-7.57532,1.81863-10.26279-1.03143
+        c-2.94891,0.97992-6.07104,1.32809-9.16339,1.02188l-3.75839-25.93771c-0.19241-1.33932,0.73734-2.58109,2.07666-2.77353
+        c0.39264-0.0564,0.79309-0.01663,1.16693,0.11588"
+      />
+      <path
+        fill="none"
+        stroke="#FFFFFF"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M177.55006,289.00372
+        c0,0,44.79462,6.10028,57.19098,36.94629"
+      />
+      <path
+        fill="#3B7BF2"
+        d="M233.74695,320.62674l16.62628,8.70789c-0.50591,2.23218-1.46632,4.33618-2.82135,6.18079
+        c0.62357,1.23288,0.79706,2.64478,0.49054,3.99194c-0.63861,3.06564-3.64151,5.03314-6.70715,4.39453
+        c-0.02223-0.00461-0.04442-0.00937-0.06659-0.01428c-1.32777-0.31598-2.49219-1.11102-3.26991-2.2326
+        c-2.17442,0.45322-4.42206,0.4212-6.58269-0.09384l-0.23137-19.33893c-0.04089-0.97116,0.71326-1.7916,1.68442-1.83249
+        c0.30022-0.01263,0.59868,0.05179,0.86694,0.18716"
+      />
+    </g>
+  </g>
+
+  <g id="bird" style="transform-origin: bottom right">
+    <set attributeName="opacity" attributeType="CSS" to="0" />
+    <set
+      attributeName="opacity"
+      attributeType="CSS"
+      to="1"
+      begin="capOpenedAnimation.begin"
+    />
+    <animateTransform
+      attributeName="transform"
+      type="translate"
+      from="-40 60"
+      to="15 -10"
+      begin="capOpenedAnimation.begin - 0.25s"
+      dur="0.5s"
+      fill="freeze"
+    />
+    <animateTransform
+      id="birdAnimation"
+      attributeName="transform"
+      type="rotate"
+      from="-45"
+      to="-15"
+      begin="capOpenedAnimation.begin - 0.25s"
+      additive="sum"
+      dur="0.5s"
+      fill="freeze"
+    />
+    <g id="wing" style="transform-origin: bottom center">
+      <animateTransform
+        attributeName="transform"
+        type="skewX"
+        values="30; 0; 30"
+        begin="birdAnimation.end"
+        dur="0.20s"
+        fill="freeze"
+        calcMode="discrete"
+        repeatCount="indefinite"
+      />
+      <animateTransform
+        attributeName="transform"
+        type="skewY"
+        values="-5; 0; -5"
+        begin="birdAnimation.end"
+        dur="0.20s"
+        fill="freeze"
+        calcMode="discrete"
+        additive="sum"
+        repeatCount="indefinite"
+      />
+      <path
+        d="M279.2,183.8A4.89,4.89,0,0,1,283,179h0l21.07-5.4c-7.78,14.84-19.18,15.07-20,15.07h0a4.9,4.9,0,0,1-4.85-4.9"
+        fill="#fff"
+      />
+    </g>
+    <g id="body">
+      <path
+        d="M262.24,169.86l10.76,0a4.65,4.65,0,0,1,4.41-2.9,3.91,3.91,0,0,1,3.48,1.76,13.39,13.39,0,0,1,1.37,2.59c0.63,1.57,4,15.8,5.89,19.16,1.1,2,4.39,7.16,4.39,7.16a2.3,2.3,0,0,1,.31,1.15V208s-3.11-1.08-3.11-3.91v-6.53c-1.91.27-6-1.65-8.33-2.88a12.82,12.82,0,0,1-6.36-6.76,12.33,12.33,0,0,1-.11-9.16,7.13,7.13,0,0,0,.79-2.91c-0.06-1.14-1.39-2.72-2.18-4.05Z"
+        fill="#fff"
+      />
+    </g>
+  </g>
+</svg>
