@@ -28,7 +28,7 @@
       from="1"
       to="0"
       fill="freeze"
-      begin="suitcaseMotion.begin + 1.5s"
+      begin="entryPoint.begin + 1.5s"
     />
     <animateTransform
       dur="1s"
@@ -36,7 +36,7 @@
       type="translate"
       to="0, -500"
       fill="freeze"
-      begin="suitcaseMotion.begin + 1.5s"
+      begin="entryPoint.begin + 1.5s"
     />
     <g id="cloud1">
       <path
@@ -106,13 +106,13 @@
       attributeName="opacity"
       attributeType="CSS"
       to="0"
-      end="suitcaseMotion.begin"
+      end="entryPoint.begin"
     />
     <animateMotion
-      id="suitcaseMotion"
+      id="entryPoint"
       fill="freeze"
       dur="2s"
-      begin="0.5s">
+      begin="indefinite">
       <mpath href="#motionPath" />
     </animateMotion>
     <animateTransform
@@ -121,7 +121,7 @@
       type="translate"
       values="-190 -120"
       fill="freeze"
-      begin="suitcaseMotion.begin"
+      begin="entryPoint.begin"
     />
     <animateTransform
       dur="2s"
@@ -131,7 +131,7 @@
       keyTimes="0; 0.4; 0.8; 1"
       additive="sum"
       fill="freeze"
-      begin="suitcaseMotion.begin"
+      begin="entryPoint.begin"
     />
     <animateTransform
       dur="2s"
@@ -141,7 +141,7 @@
       keyTimes="0; 0.1; 0.4; 0.8; 1"
       additive="sum"
       fill="freeze"
-      begin="suitcaseMotion.begin"
+      begin="entryPoint.begin"
     />
 
     <path
@@ -252,7 +252,7 @@
       type="rotate"
       values="0; 2; 0"
       fill="freeze"
-      begin="suitcaseMotion.begin"
+      begin="entryPoint.begin"
       repeatCount="indefinite"
       keySplines="0 0 0.58 1; 0 0 0.58 1"
       calcMode="spline"
@@ -276,7 +276,7 @@
       type="rotate"
       values="0; 5; 0"
       fill="freeze"
-      begin="suitcaseMotion.begin"
+      begin="entryPoint.begin"
       repeatCount="indefinite"
       keySplines="0 0 0.58 1; 0 0 0.58 1"
       calcMode="spline"

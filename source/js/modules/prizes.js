@@ -12,15 +12,30 @@ export default () => {
     animationPrizesTitle.runAnimation();
   }, 100);
 
+  const animateItems = (coll) => {
+    coll.forEach((value, idx) => {
+      const svg = value.querySelector(`svg`);
+      const clone = svg.cloneNode(true);
+      svg.remove();
+      value.prepend(clone);
+
+      if (idx === 0) {
+        clone.querySelector(`#entryPoint`).beginElement();
+      }
+    });
+  };
+
   document.addEventListener(`screenChanged`, ({detail: {screenName}}) => {
     if (screenName === `prizes`) {
+      animateItems(document.querySelectorAll(`.js-prizes-icon`));
+
       const NOW = Date.now();
       const FPS = 12;
       const SECOND = 1000;
       const FPS_INTERVAL = SECOND / FPS;
       const THRESHOLD = 7;
-      const DELAY1 = 1550;
-      const DELAY2 = 2350;
+      const DELAY1 = 6500;
+      const DELAY2 = 10500;
 
       const sequenceMapping = {
         // eslint-disable-next-line no-unused-vars
