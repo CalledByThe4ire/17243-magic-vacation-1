@@ -23,9 +23,7 @@ export default () => {
     label.firstElementChild.textContent = pad(minutes);
     label.lastElementChild.textContent = pad(seconds);
   };
-  countdown.onCompleted = () => {
-    console.log(`Game finished!`); // eslint-disable-line no-console
-  };
+  countdown.onCompleted = () => {};
   const label = document.querySelector(`.js-game-counter`);
 
   document.addEventListener(`screenChanged`, ({detail: {screenName}}) => {
