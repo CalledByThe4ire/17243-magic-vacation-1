@@ -146,14 +146,22 @@ export const Easing = {
   EASE_IN_OUT_BOUNCE(x) {
     return x < 0.5
       ? // eslint-disable-next-line new-cap
-        (1 - this.EASE_OUT_BOUNCE(1 - 2 * x)) / 2
+      (1 - this.EASE_OUT_BOUNCE(1 - 2 * x)) / 2
       : // eslint-disable-next-line new-cap
-        (1 + this.EASE_OUT_BOUNCE(2 * x - 1)) / 2;
+      (1 + this.EASE_OUT_BOUNCE(2 * x - 1)) / 2;
   },
 };
 
 export const sleep = (ms) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
+};
+
+export const range = function* (start = 0, stop, step = 1) {
+  let cur = (stop === undefined) ? 0 : start;
+  let max = (stop === undefined) ? start : stop;
+  for (let i = cur; step < 0 ? i > max : i < max; i += step) {
+    yield i;
+  }
 };
 
 export const getRandomNumber = (threshold) =>
@@ -176,8 +184,8 @@ export const setActiveColor = (colorName, hue, saturation, lightness) => {
   const rootElement = document.documentElement;
 
   rootElement.style.setProperty(
-    `--${colorName}`,
-    `hsl(${hue}, ${saturation}%, ${lightness}%)`
+      `--${colorName}`,
+      `hsl(${hue}, ${saturation}%, ${lightness}%)`
   );
   rootElement.style.setProperty(`--${colorName}-h`, hue);
   rootElement.style.setProperty(`--${colorName}-s`, `${saturation}%`);
@@ -559,9 +567,9 @@ export class AccentTypographyBuild {
     span.style.transition = `all ${this._timer}ms ease ${this._timeOffset}ms`;
     span.style.transitionProperty = `${this._propertiesList.join()}`;
     this._timeOffset = calcTimeOffsetByCategory(
-      this._category,
-      this._DELAY,
-      this._timeOffset
+        this._category,
+        this._DELAY,
+        this._timeOffset
     );
     return span;
   }
@@ -673,6 +681,6 @@ export class Countdown {
     const seconds = Math.floor((milliseconds / this._SECOND) % this.TIME_SCALE);
     const minutes = Math.floor(milliseconds / this._SECOND / this.TIME_SCALE);
 
-    return { seconds, minutes };
+    return {seconds, minutes};
   }
 }
